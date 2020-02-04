@@ -1,0 +1,40 @@
+if __name__ == '__main__':
+    students =[] 
+    min_score = 10000
+    n = int(input())    
+    for i in range(n):
+        name = input()
+        score = float(input())
+        students.append((name, score))   
+        if score < min_score:
+            min_score = score                   
+    
+    students = sorted(students, key=lambda x: x[1])
+  #  print(students)
+    
+    not_min_score = 0    
+    for i in range (1, n):
+        not_min_score = students[i][1]
+        if not_min_score == min_score:
+            continue
+        else:
+            break
+    
+  #  print("min_score", min_score) 
+  #  print("not_min_score", not_min_score) 
+
+    names = []
+    for name, score in students:
+        if score==not_min_score:
+            names.append(name)
+    
+    names.sort()
+    for name in names:
+        print(name)
+
+    
+        
+
+        
+    
+
